@@ -23,7 +23,7 @@ mkdir -p "$RAW_DIR"
 BASE_START_SEC=$(TZ="America/Sao_Paulo" date -d "$DATE 00:00:00" +%s)
 BASE_END_SEC=$(TZ="America/Sao_Paulo" date -d "$DATE 23:59:59" +%s)
 
-OFFSET_FIX_SEC=10800
+OFFSET_FIX_SEC=0
 
 START_TS=$((BASE_START_SEC + OFFSET_FIX_SEC))000
 END_TS=$((BASE_END_SEC + OFFSET_FIX_SEC))000
