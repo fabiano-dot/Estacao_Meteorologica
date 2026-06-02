@@ -1,26 +1,74 @@
-# 📡 Infraestrutura LoRaWAN – UNICAMP
+# 📡 Estações Meteorológicas LoRaWAN – UNICAMP
 
 ## 🧩 Descrição
-Este projeto documenta a estrutura e o funcionamento de uma infraestrutura **LoRaWAN** implementada no ambiente da **Universidade Estadual de Campinas (UNICAMP)**, utilizada em projetos de monitoramento IoT. O sistema é composto por um gateway LoRaWAN conectado à rede institucional e por uma plataforma de servidor responsável por receber, processar e visualizar os dados provenientes de dispositivos finais.
 
-Na configuração atual, o gateway está integrado à **The Things Network (TTN)**, o que permite validar o fluxo de comunicação LoRaWAN e o funcionamento geral do sistema dentro das restrições impostas pela infraestrutura de rede universitária. Essa implementação constitui o ponto de partida para a análise da arquitetura.
+Este repositório documenta e armazena os dados de uma rede de monitoramento ambiental baseada em **LoRaWAN**, implantada no campus da **Universidade Estadual de Campinas (UNICAMP)**. O sistema é composto por até 10 estações de sensoriamento (em01–em10) distribuídas pelo campus, um gateway LoRaWAN e uma plataforma de servidor autogerenciada para recepção, processamento e visualização dos dados.
 
-O projeto estabelece, ainda, as bases técnicas para uma futura migração para uma arquitetura com servidor LoRaWAN autogerenciado, mantendo o foco na estrutura do sistema e na interação entre rede, gateway e servidor.
+O projeto é desenvolvido no contexto acadêmico da FEEC/Unicamp, com caráter open-source e dashboards públicos.
 
-## 🏗️ Arquitetura atual
-- 📡 Gateway LoRaWAN  
-- ☁️ The Things Network (TTN)  
-- 📊 Servidor de visualização  
+---
 
-## 🎯 Objetivo do projeto
-- Documentar a arquitetura atual  
-- Identificar restrições de rede  
-- Preparar uma migração futura  
+## 🏗️ Arquitetura do sistema
 
-## 📦 Escopo
-- Infraestrutura e comunicação  
-- Não inclui dispositivos finais LoRaWAN nem aplicações específicas  
+### Hardware das estações
+- **Raspberry Pi Pico** – coleta de sensores e coordenação via UART
+- **ESP32-C3 XIAO + RFM95W** – transmissão LoRaWAN (stack LMIC)
+- **Sensores**: BME280 (temperatura, umidade, pressão), BH1750 (luminosidade), GPS, tensão do sistema (Vsys)
+
+### Rede LoRaWAN
+- **Gateway**: RAK7289CV2
+- **Região**: AU915, sub-banda 0, ABP Classe A
+- **Servidor de rede**: ChirpStack v4 (self-hosted, Docker)
+
+### Servidor e visualização
+- **Hardware**: Raspberry Pi 5 (8GB)
+- **Plataforma**: ThingsBoard CE 4.3.0
+- **Acesso público**: Cloudflare Tunnel
+- **Dados climáticos**: integração OpenWeatherMap (polling a cada 10 min, coordenadas FEEC)
+
+---
+
+## 📂 Estrutura de dados
+
+Os dados são exportados automaticamente via cron diário e organizados por data:
+
+data/
+└── YYYY/
+└── MM/
+└── DD/
+├── emXX.csv
+├── owm_unicamp.csv
+└── raw_json/
+
+CSVs são gerados para as estações ativas. Cada arquivo contém: timestamp, temperatura, umidade, pressão, tensão do sistema, luminosidade, coordenadas GPS, RSSI, SNR, frame counter e timestamp de aquisição.
+
+O arquivo `owm_unicamp.csv` contém dados meteorológicos externos (OpenWeatherMap): temperatura, umidade, pressão atmosférica, velocidade e direção do vento, cobertura de nuvens e precipitação.
+
+---
+
+## 🎯 Objetivos do projeto
+
+- Monitoramento ambiental contínuo no campus da Unicamp
+- Análise de desempenho de rede LoRaWAN (RSSI, SNR, PDR, ADR)
+- Mapeamento de cobertura com dados GPS e modelos preditivos
+- Geração de dataset aberto para pesquisa acadêmica
+
+---
 
 ## 🚧 Estado do projeto
-- ✅ Sistema operacional com TTN  
-- 🔄 Migração para servidor próprio: em análise  
+
+- ✅ Rede LoRaWAN operacional
+- ✅ ChirpStack v4 self-hosted com ADR ativo
+- ✅ ThingsBoard CE com dashboards públicos
+- ✅ Export automático diário para GitHub
+- ✅ Integração OpenWeatherMap
+- 🔄 Estações em04–em10: implantação prevista
+- 🔄 Plugin ML para ADR: em desenvolvimento
+- 🔄 Mapeamento de cobertura: em desenvolvimento
+
+---
+
+## 🔗 Links
+
+- 📊 [Dashboard público](https://iot.bitdoglablsm.space/dashboard)
+- 🏫 FEEC/Unicamp
