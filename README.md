@@ -12,7 +12,7 @@ O projeto é desenvolvido no contexto acadêmico da FEEC/Unicamp, com caráter o
 
 ### Rede LoRaWAN
 - **Gateway**: RAK7289CV2
-- **Região**: AU915, sub-banda 0, ABP Classe A
+- **Região**: AU915, sub-banda 0/1, ABP Classe A
 - **Servidor de rede**: ChirpStack v4 (self-hosted, Docker)
 
 ### Servidor e visualização
