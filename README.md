@@ -10,11 +10,6 @@ O projeto é desenvolvido no contexto acadêmico da FEEC/Unicamp, com caráter o
 
 ## 🏗️ Arquitetura do sistema
 
-### Hardware das estações
-- **Raspberry Pi Pico** – coleta de sensores e coordenação via UART
-- **ESP32-C3 XIAO + RFM95W** – transmissão LoRaWAN (stack LMIC)
-- **Sensores**: BME280 (temperatura, umidade, pressão), BH1750 (luminosidade), GPS, tensão do sistema (Vsys)
-
 ### Rede LoRaWAN
 - **Gateway**: RAK7289CV2
 - **Região**: AU915, sub-banda 0, ABP Classe A
