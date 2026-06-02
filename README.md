@@ -19,7 +19,7 @@ O projeto é desenvolvido no contexto acadêmico da FEEC/Unicamp, com caráter o
 - **Hardware**: Raspberry Pi 5 (8GB)
 - **Plataforma**: ThingsBoard CE 4.3.0
 - **Acesso público**: Cloudflare Tunnel
-- **Dados climáticos**: integração OpenWeatherMap (polling a cada 10 min, coordenadas FEEC)
+- **Dados climáticos**: Devices + integração OpenWeatherMap (polling a cada 10 min, coordenadas FEEC) ref: https://thingsboard.io/docs/recipes/fetch-weather-data/
 
 ---
 
