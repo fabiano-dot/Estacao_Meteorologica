@@ -1,3 +1,3 @@
-"Nº";"Data e Hora (America/Sao_Paulo)";"Temperatura (°C)";"Umidade Relativa (%)";"Pressão Atmosférica (hPa)";"Tensão do Sistema (mV)";"Luminosidade (lux)";"Latitude (°)";"Longitude (°)";"Altitude (m)";"RSSI (dBm)";"SNR (dB)";"Frame Counter";"Timestamp Aquisição (ms)"
-"1";"2026-02-05 19:59:18";"25.55";"63.5";"941.38";"3400";"0";"-22.822294235229492";"-47.06566619873047";"619.2";"42";"4.2";"0";"1770332358041"
-"2";"2026-02-05 19:59:18";"25.55";"63.5";"941.38";"3400";"0";"-22.822294235229492";"-47.06566619873047";"619.2";"42";"4.2";"0";"1770332358863"
+"Nº","Data e Hora (America/Sao_Paulo)","Temperatura (°C)","Umidade Relativa (%)","Pressão Atmosférica (hPa)","Tensão do Sistema (mV)","Luminosidade (lux)","Latitude (°)","Longitude (°)","Altitude (m)","RSSI (dBm)","SNR (dB)","Frame Counter","Timestamp Aquisição (ms)"
+"1","2026-02-05 19:59:18","25.55","63.5","941.38","3400","0","-22.822294235229492","-47.06566619873047","619.2","42","4.2","0","1770332358041"
+"2","2026-02-05 19:59:18","25.55","63.5","941.38","3400","0","-22.822294235229492","-47.06566619873047","619.2","42","4.2","0","1770332358863"

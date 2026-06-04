@@ -1,2 +1,2 @@
-"Nº";"Data e Hora (America/Sao_Paulo)";"Temperatura (°C)";"Umidade Relativa (%)";"Pressão Atmosférica (hPa)";"Tensão do Sistema (mV)";"Luminosidade (lux)";"Latitude (°)";"Longitude (°)";"Altitude (m)";"RSSI (dBm)";"SNR (dB)";"Frame Counter";"Timestamp Aquisição (ms)"
-"1";"2026-05-14 03:49:56";"18.4";"60.5";"947.08";"2380";"";"";"";"";"-83";"5.5";"65508";"1778741396080"
+"Nº","Data e Hora (America/Sao_Paulo)","Temperatura (°C)","Umidade Relativa (%)","Pressão Atmosférica (hPa)","Tensão do Sistema (mV)","Luminosidade (lux)","Latitude (°)","Longitude (°)","Altitude (m)","RSSI (dBm)","SNR (dB)","Frame Counter","Timestamp Aquisição (ms)"
+"1","2026-05-14 03:49:56","18.4","60.5","947.08","2380","","","","","-83","5.5","65508","1778741396080"
