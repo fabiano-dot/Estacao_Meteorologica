@@ -1,2 +1,3 @@
 scripts/config.env
 Credenciais/
+data/**/raw_json/
