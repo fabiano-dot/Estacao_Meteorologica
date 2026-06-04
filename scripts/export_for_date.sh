@@ -170,5 +170,8 @@ else
   | awk 'BEGIN{FS=","; OFS=","} NR==1{print; next} { $1="\"" (NR-1) "\""; print }' > "$OWM_CSV"
   echo "[OK] Exportado OWM → $OWM_CSV"
 fi
+# Limpa raw_json após geração dos CSVs
+rm -rf "$RAW_DIR"
+echo "[INFO] raw_json removido."
 
 echo "[FIN] Export para $DATE terminado."
