@@ -36,7 +36,7 @@ for DEV in "${!DEVICES[@]}"; do
   ID="${DEVICES[$DEV]}"
   RAW="$RAW_DIR/raw_${DEV}.json"
   CSV="$OUT_DIR/${DEV}.csv"
-  KEYS="temperature,humidity,pressure,Vsys,luminosity,latitude,longitude,altitude,rssi,snr,fcnt,aq_timestamp_ms"
+  KEYS="temperature,humidity,pressure,Vsys,luminosity,latitude,longitude,altitude,rssi,snr,dr,fcnt,aq_timestamp_ms"
 
   echo "[INFO] Baixando $DEV ($ID)..."
   curl -s -X GET "$TB_URL/api/plugins/telemetry/DEVICE/$ID/values/timeseries?keys=$KEYS&startTs=$START_TS&endTs=$END_TS&limit=50000" \
@@ -78,6 +78,7 @@ for DEV in "${!DEVICES[@]}"; do
       "Altitude (m)",
       "RSSI (dBm)",
       "SNR (dB)",
+      "DR",
       "Frame Counter",
       "Timestamp Aquisição (ms)"
     ] | map(q(.)) | join(",")),
@@ -95,6 +96,7 @@ for DEV in "${!DEVICES[@]}"; do
         v(.altitude;        $ts),
         v(.rssi;            $ts),
         v(.snr;             $ts),
+        v(.dr;              $ts),
         v(.fcnt;            $ts),
         v(.aq_timestamp_ms; $ts)
       ]
@@ -146,8 +148,8 @@ else
       "Direção Vento (°)",
       "Nuvens (%)",
       "Chuva 1h (mm)",
-      "Lat",
-      "Lon"
+      "Latitude (°)",
+      "Longitude (°)"
     ] | map(q(.)) | join(",")),
     (ts_all[] as $ts |
       [
@@ -170,6 +172,7 @@ else
   | awk 'BEGIN{FS=","; OFS=","} NR==1{print; next} { $1="\"" (NR-1) "\""; print }' > "$OWM_CSV"
   echo "[OK] Exportado OWM → $OWM_CSV"
 fi
+
 # Limpa raw_json após geração dos CSVs
 rm -rf "$RAW_DIR"
 echo "[INFO] raw_json removido."
