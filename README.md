@@ -2,7 +2,7 @@
 
 Firmware e infraestrutura de servidor de uma rede de monitoramento ambiental baseada em **LoRaWAN**, implantada no campus da **Universidade Estadual de Campinas (UNICAMP)**. As estações são identificadas de `em01` a `em10` e estão sendo gradualmente implantadas ao longo do campus.
 
-Os dados coletados estão disponíveis publicamente e são atualizados diariamente em: **[HuggingFace Dataset → adr1t0s/estacao-meteorologica](https://huggingface.co/datasets/adr1t0s/estacao-meteorologica)**
+Os dados coletados estão disponíveis publicamente e são atualizados diariamente em: **[HuggingFace Dataset → ](https://huggingface.co/datasets/adr1t0s/estacao-meteorologica/tree/main)**
 
 ---
 
