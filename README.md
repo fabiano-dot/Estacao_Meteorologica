@@ -41,15 +41,17 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 
 📂 Estrutura do repositório
 
+```
 Estacao_Meteorologica/
 ├── README.md
-├── arquitectura.png
+├── arquitectura.svg
 ├── ScriptsToDataDailyUpdate/
 │   ├── export_for_date.sh      ← exporta dados de uma data específica
 │   ├── export_yesterday.sh     ← wrapper que chama export_for_date com ontem
 │   ├── run_daily.sh            ← orquestrador do cron: pull → export → push
-│   └── config.env              ← privado
+│   └── config.env              ← credenciais (não versionado)
 └── .gitignore
+```
 
 Os scripts de exportação de dados e os CSVs estão no **[HuggingFace Dataset](https://huggingface.co/datasets/adr1t0s/estacao-meteorologica/tree/main)**, não neste repositório. Os três scripts principais são:
 
