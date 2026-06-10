@@ -39,6 +39,26 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 
 ---
 
+📂 Estrutura do repositório
+
+Estacao_Meteorologica/
+├── README.md
+├── arquitectura.png
+├── ScriptsToDataDailyUpdate/
+│   ├── export_for_date.sh      ← exporta dados de uma data específica
+│   ├── export_yesterday.sh     ← wrapper que chama export_for_date com ontem
+│   ├── run_daily.sh            ← orquestrador do cron: pull → export → push
+│   └── config.env              ← privado
+└── .gitignore
+
+Os scripts de exportação de dados e os CSVs estão no **[HuggingFace Dataset](https://huggingface.co/datasets/adr1t0s/estacao-meteorologica/tree/main)**, não neste repositório. Os três scripts principais são:
+
+- **`export_for_date.sh`** — recebe uma data (`YYYY-MM-DD`) como argumento, autentica na API REST do ThingsBoard, baixa a telemetria de cada dispositivo ativo e do asset OWM para aquela janela de 24h (fuso `America/Sao_Paulo`), converte os JSONs brutos em CSVs com `jq` e remove os JSONs ao final.
+- **`export_yesterday.sh`** — wrapper simples que calcula a data de ontem e chama `export_for_date.sh`. É o ponto de entrada do cron.
+- **`run_daily.sh`** — orquestrador diário: faz `git pull --rebase` para receber atualizações dos scripts, chama `export_yesterday.sh`, e se houver dados novos em `data/` faz commit e push para o HuggingFace automaticamente.
+
+---
+
 ## 🚧 Estado do projeto
 
 | Componente | Status |
