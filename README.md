@@ -58,37 +58,6 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 | **ThingsBoard CE 4.3.0** | Plataforma IoT — ingestão, regras e dashboards (Docker) |
 | **Mosquitto** | MQTT broker |
 | **Cloudflare Tunnel** | Acesso remoto seguro sem exposição de portas |
-| **IP público** | `143.106.8.215` (rede institucional Unicamp) |
-
----
-
-## 📂 Estrutura do repositório
-
-```
-Estacao_Meteorologica/
-├── README.md
-├── firmware/
-│   ├── pico/               ← firmware Raspberry Pi Pico (C/C++)
-│   └── esp32/              ← firmware ESP32-C3 XIAO (Arduino/LMIC)
-│       ├── lorawan.cpp
-│       ├── lorawan.h
-│       └── lmic_config.h
-└── .gitignore
-```
-
-Os scripts de exportação de dados e os CSVs **não estão neste repositório** — estão no [HuggingFace Dataset](https://huggingface.co/datasets/adr1t0s/estacao-meteorologica).
-
----
-
-## ⚙️ Dependências do firmware (ESP32-C3)
-
-| Biblioteca | Versão | Função |
-|---|---|---|
-| MCCI LMIC | v5.01 | Stack LoRaWAN |
-| LoRa (Sandeep Mistry) | 0.8.0 | Driver RFM95W |
-| Preferences | built-in | Persistência NVS (ADR state) |
-
-**Importante:** `lmic_config.h` deve ter `#define CFG_au915` para operar na região AU915. O uso de `CFG_us915` resulta em incompatibilidade de canais.
 
 ---
 
