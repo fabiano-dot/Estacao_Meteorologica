@@ -39,14 +39,6 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 
 ---
 
-## 🔑 ADR e NVS
-
-O estado ADR (`datarate` e `txpow` negociados pelo ChirpStack) é persistido em NVS via `Preferences` para sobreviver aos ciclos de `LMIC_reset()` que ocorrem a cada transmissão ABP. Os valores são gravados no flash **apenas quando mudam**, para preservar os ciclos de escrita.
-
-O menu serial da Pico permite configurar o SF como fixo (7–12) ou `AUTO` (0xFF), modo em que o ESP32 ignora o NVS e deixa o ChirpStack negociar via `LinkADRReq`.
-
----
-
 ## 🚧 Estado do projeto
 
 | Componente | Status |
