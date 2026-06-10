@@ -9,29 +9,8 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 ## 🏗️ Arquitetura do sistema
 
 ```
-┌──────────────────────┐
-│  Estação (em01–em10) │
-│  RPi Pico + ESP32-C3 │
-│  + RFM95W            │
-└──────────┬───────────┘
-           │ LoRaWAN AU915 (ABP Classe A)
-           ▼
-┌──────────────────────┐
-│  Gateway RAK7289CV2  │
-│  FEEC – Edifício H   │
-└──────────┬───────────┘
-           │ UDP Packet Forwarder
-           ▼
-┌──────────────────────┐     ┌──────────────────────┐
-│  ChirpStack v4       │────▶│  ThingsBoard CE 4.3.0 │
-│  (Docker, RPi 5)     │MQTT │  (Docker, RPi 5)      │
-└──────────────────────┘     └──────────┬────────────┘
-                                        │ REST API
-                                        ▼
-                              ┌──────────────────────┐
-                              │  Export diário (cron) │
-                              │  → HuggingFace        │
-                              └──────────────────────┘
+![Arquitetura do sistema](arquitectura.png)
+
 ```
 
 ---
