@@ -36,22 +36,6 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 
 ---
 
-## 🔧 Hardware das estações
-
-| Componente | Descrição |
-|---|---|
-| **Raspberry Pi Pico** | Coleta de sensores e coordenação geral |
-| **ESP32-C3 XIAO** | Processamento LoRaWAN (stack MCCI LMIC v5.01) |
-| **RFM95W** | Rádio LoRa — SPI com ESP32-C3 |
-| **BME280** | Temperatura (°C), umidade (%), pressão (hPa) — I²C |
-| **BH1750** | Luminosidade (lux) — I²C |
-| **GPS NEO-6M / ublox** | Posicionamento — UART |
-| **INA226** | Monitoramento de tensão Vsys |
-
-Comunicação entre Pico e ESP32-C3: **UART**.
-
----
-
 ## 📡 Rede LoRaWAN
 
 | Parâmetro | Valor |
