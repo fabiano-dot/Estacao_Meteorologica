@@ -1,3 +1,0 @@
-"Nº","Data e Hora (America/Sao_Paulo)","Temperatura (°C)","Umidade Relativa (%)","Pressão Atmosférica (hPa)","Tensão do Sistema (mV)","Luminosidade (lux)","Latitude (°)","Longitude (°)","Altitude (m)","RSSI (dBm)","SNR (dB)","Frame Counter","Timestamp Aquisição (ms)"
-"1","2026-05-18 03:44:55","16.63","69","947.4","2320","","","","","-85","13.800000190734863","16577","1779086695871"
-"2","2026-05-18 16:54:38","20.15","73","949.08","2320","","","","","-85","13.5","16578","1779134078103"
