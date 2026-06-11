@@ -1,0 +1,10 @@
+PROJECT_NAME           = "Estacao Meteorologica IoT Code structuring for modular architecture"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = ./main.c ./include ./src ./README.md
+USE_MDFILE_AS_MAINPAGE = README.md
+IMAGE_PATH = assets
+RECURSIVE              = YES
+GENERATE_LATEX         = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = YES
+FILE_PATTERNS          = *.h *.c
