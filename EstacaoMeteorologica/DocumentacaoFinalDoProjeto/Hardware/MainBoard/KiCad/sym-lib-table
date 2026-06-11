@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "SchematicLibrary")(type "KiCad")(uri "${KIPRJMOD}/SchematicLibrary.kicad_sym")(options "")(descr ""))
+)
