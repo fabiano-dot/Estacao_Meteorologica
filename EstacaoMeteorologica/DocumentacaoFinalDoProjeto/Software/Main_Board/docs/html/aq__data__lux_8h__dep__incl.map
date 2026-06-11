@@ -1,0 +1,14 @@
+<map id="include/aq_data_lux.h" name="include/aq_data_lux.h">
+<area shape="rect" id="Node000001" title="Driver do sensor de luminosidade BH1750." alt="" coords="157,5,321,31"/>
+<area shape="rect" id="Node000002" href="$aq__data_8h.html" title="Chama todos os drivers dos sensores." alt="" coords="91,79,228,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,42,174,80,171,76,215,38"/>
+<area shape="rect" id="Node000006" href="$aq__data__lux_8c.html" title="Driver do sensor de luminosidade BH1750." alt="" coords="252,79,387,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="264,38,308,76,304,80,260,42"/>
+<area shape="rect" id="Node000003" href="$wcm_8h.html" title="Comunica com o WCM enviado os comandos para envio das mensagens por LoRa." alt="" coords="5,152,121,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,114,81,154,77,150,131,110"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="Inicialização do sistema e main loop." alt="" coords="78,225,145,251"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="155,118,137,178,119,226,114,224,131,176,150,117"/>
+<area shape="rect" id="Node000005" href="$aq__data_8c.html" title="Chama todos os drivers dos sensores." alt="" coords="197,152,305,177"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="186,110,238,150,235,154,183,114"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="81,187,106,224,101,227,77,190"/>
+</map>
