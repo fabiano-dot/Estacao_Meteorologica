@@ -22,8 +22,6 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 | **Região** | AU915 — sub-bandas 0 e 1 (16 canais) |
 | **Modo** | ABP Classe A |
 | **Servidor de rede** | ChirpStack v4 (self-hosted, Docker) |
-| **ADR** | Ativado — algoritmo default + plugin ML em desenvolvimento |
-
 ---
 
 ## 🖥️ Servidor
@@ -66,7 +64,6 @@ Os scripts de exportação de dados e os CSVs estão no **[HuggingFace Dataset](
 | Componente | Status |
 |---|---|
 | Rede LoRaWAN operacional | ✅ |
-| ADR com persistência NVS | ✅ |
 | ChirpStack v4 self-hosted | ✅ |
 | ThingsBoard CE com dashboards públicos | ✅ |
 | Export automático diário para HuggingFace | ✅ |
