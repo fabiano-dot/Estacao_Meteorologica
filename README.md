@@ -9,7 +9,7 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 ## 🏗️ Arquitetura do sistema
 
 
-![Arquitetura do sistema](arquitectura.png)
+![Arquitetura do sistema](arqui.png)
 
 
 ---
