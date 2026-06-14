@@ -42,7 +42,7 @@ Os dados coletados estão disponíveis publicamente e são atualizados diariamen
 ```
 Estacao_Meteorologica/
 ├── README.md
-├── arquitectura.svg
+├── arquitectura.png
 ├── ScriptsToDataDailyUpdate/
 │   ├── export_for_date.sh      ← exporta dados de uma data específica
 │   ├── export_yesterday.sh     ← wrapper que chama export_for_date com ontem
