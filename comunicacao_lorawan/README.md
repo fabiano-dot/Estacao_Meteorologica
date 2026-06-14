@@ -1,4 +1,4 @@
-# Comunicação LoRaWAN — Estações Meteorológicas FEEC/Unicamp
+# Comunicação LoRaWAN — Estações Meteorológicas Unicamp
 
 Esta pasta contém os dados de telemetria LoRaWAN coletados pelas estações meteorológicas instaladas no campus da FEEC/Unicamp, juntamente com informações sobre a configuração da rede e a localização dos dispositivos.
 
@@ -38,7 +38,6 @@ A rede conta com **4 estações simultâneas** operando em modo ABP Classe A sob
 | Localização | FEEC – Edifício H, Unicamp |
 | Latitude | -22.82236 |
 | Longitude | -47.06600 |
-| Servidor de rede | ChirpStack v4 (Docker, Raspberry Pi 5) |
 
 ---
 
@@ -83,4 +82,4 @@ Os arquivos CSV contêm os dados de telemetria brutos exportados via API REST do
 
 ![Localização das estações](figures/Pos_em_rak.png)
 
-Localização do gateway RAK7289CV2 e das quatro estações meteorológicas no campus FEEC/Unicamp.
+Localização do gateway RAK7289CV2 e das quatro estações meteorológicas no campus.
