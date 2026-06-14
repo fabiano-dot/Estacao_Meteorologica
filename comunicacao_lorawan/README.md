@@ -8,26 +8,22 @@ Esta pasta contém os dados de telemetria LoRaWAN coletados pelas estações met
 
 A rede conta com **4 estações simultâneas** operando em modo ABP Classe A sobre LoRaWAN AU915 (sub-bandas 0 e 1, canais 0–15).
 
-| Métrica | em02 | em04 | em06 | em10 |
-|---|---|---|---|---|
-| Latitude | -22.822205 | -22.822132 | -22.819542 | -22.818361 |
-| Longitude | -47.065704 | -47.065639 | -47.071064 | -47.062000 |
-| Distância ao gateway (m) | 35 | 45 | 606 | 605 |
-| Canal | 8 | 8 | 6 | 6 |
-| Frequência (MHz) | 916.8 | 916.8 | 916.4 | 916.4 |
-| rfChain | 2 | 2 | 1 | 1 |
-| Spreading Factor | SF7 | SF7 | SF7 | SF10 |
-| Data Rate | DR5 | DR5 | DR5 | DR2 |
-| TX Power (dBm) | 14 | 14 | 14 | 14 |
-| Bandwidth (kHz) | 125 | 125 | 125 | 125 |
-| Intervalo de transmissão (s) | 60 | 600 | 60 | 60 |
-| Pacotes recebidos (24h) | 1440 | 143 | 1401 | 1439 |
-| PDR (%) | 100.0 | 99.3 | 97.3 | 99.9 |
-| RSSI médio (dBm) | -81.0 | -94.9 | -103.2 | -89.3 |
-| RSSI mín / máx (dBm) | -88 / -78 | -106 / -90 | -113 / -87 | -98 / -82 |
-| SNR médio (dB) | 13.2 | 11.7 | 1.3 | 10.1 |
-| SNR mín / máx (dB) | 0.8 / 14.5 | 5.3 / 13.3 | -8.5 / 8.8 | -8.5 / 12.8 |
-| GPS ativo | Sim | Sim | Não | Não |
+| Estação | Dist. GW (m) | Canal | Freq. (MHz) | rfChain | SF | DR | TX Power (dBm) | BW (kHz) | Intervalo (s) | Pacotes (24h) | PDR (%) | RSSI médio (dBm) | SNR médio (dB) | GPS |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| em02 | 35 | 8 | 916.8 | 2 | SF7 | DR5 | 14 | 125 | 60 | 1440 | 100.0 | -81.0 | 13.2 | Sim |
+| em04 | 45 | 8 | 916.8 | 2 | SF7 | DR5 | 14 | 125 | 600 | 143 | 99.3 | -94.9 | 11.7 | Sim |
+| em06 | 606 | 6 | 916.4 | 1 | SF7 | DR5 | 14 | 125 | 60 | 1401 | 97.3 | -103.2 | 1.3 | Não |
+| em10 | 605 | 6 | 916.4 | 1 | SF10 | DR2 | 14 | 125 | 60 | 1439 | 99.9 | -89.3 | 10.1 | Não |
+
+### Coordenadas
+
+| Estação | Latitude | Longitude |
+|---|---|---|
+| em02 | -22.822205 | -47.065704 |
+| em04 | -22.822132 | -47.065639 |
+| em06 | -22.819542 | -47.071064 |
+| em10 | -22.818361 | -47.062000 |
+| Gateway | -22.822360 | -47.066000 |
 
 > **em04:** o intervalo de 600 s foi configurado para gestão energética, uma vez que o módulo GPS apresenta consumo elevado, reduzindo a autonomia da bateria durante períodos sem geração solar.  
 > **em06 / em10:** operam sem GPS, o que reduz o consumo e permite maior autonomia em campo.
