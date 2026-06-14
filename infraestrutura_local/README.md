@@ -74,9 +74,9 @@ Os valores observados são consistentes com a configuração de transmissão das
 
 ---
 
-## Pendente
+## Ainda nao sei 
 
-Os seguintes indicadores serão adicionados assim que houver acesso ao terminal da Raspberry Pi 5:
+Indicadores que tal vez encuentre en el terminal da Rasp
 
 - **Uptime do sistema** — `uptime -p`
 - **Uptime dos contêineres Docker** — `docker ps --format "table {{.Names}}\t{{.Status}}"`
