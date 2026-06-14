@@ -74,8 +74,6 @@ Os arquivos CSV contêm os dados de telemetria brutos exportados via API REST do
 | `Frame Counter` | Contador de quadros LoRaWAN (fCnt) | — |
 | `Data Rate` | Data Rate LoRaWAN (DR0–DR5, AU915) | — |
 
-> Registros duplicados (mesmo timestamp e fCnt) foram removidos, mantendo sempre o último registro recebido.
-
 ---
 
 ## Mapa de localização
