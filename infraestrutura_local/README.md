@@ -26,20 +26,6 @@ A coleta de dados está em operação desde **02/02/2026**. Os dados históricos
 
 ---
 
-## Volume estimado de mensagens
-
-Com base na configuração de transmissão de cada estação e no período de operação (131 dias, de 02/02/2026 a 13/06/2026):
-
-| Estação | Intervalo | Mensagens/dia | Total estimado |
-|---|---|---|---|
-| em02 | 60 s | 1.440 | 188.640 |
-| em06 | 60 s | 1.440 | 188.640 |
-| em10 | 60 s | 1.440 | 188.640 |
-| em04 | 600 s | 144 | 18.864 |
-| **Total** | | **4.464** | **~584.000** |
-
----
-
 ## Recursos do servidor
 
 Monitoramento realizado via painel sysadmin do ThingsBoard em 13/06/2026.
@@ -57,28 +43,34 @@ O consumo de recursos permaneceu estável ao longo do dia, sem picos significati
 
 ---
 
+## Dispositivos ativos e mensagens transportadas
+
+Período de referência: **11/06/2026 12:00 a 12/06/2026 00:00**
+
+| Métrica | Valor |
+|---|---|
+| Dispositivos ativos | **4** (constante ao longo do período) |
+| Transport messages por intervalo de 30 min | ~372 |
+| Transport messages por hora | ~744 |
+
+![Atividade — dispositivos 12h](figures/thingsboard_activity_devices_12h.png)
+![Atividade — mensagens 12h](figures/thingsboard_activity_messages_12h.png)
+
+---
+
 ## Mensagens processadas pela Rule Engine
 
-As estatísticas do nó **Save Timeseries** da Rule Chain principal mostram o volume de mensagens processadas e erros por hora.
+Estatísticas do nó **Save Timeseries** da Rule Chain principal (ChirpS Root) no mesmo período.
 
 | Métrica | Valor |
 |---|---|
 | Mensagens processadas por hora | ~182–187 |
-| Esperado teórico por hora (4 estações + OWM) | 192 |
-| Erros ocorridos (período observado) | **0** |
+| Esperado teórico (4 estações) | 186 |
+| Erros ocorridos | **0** |
 
 Os valores observados são consistentes com a configuração de transmissão das estações (em02, em06, em10 a 60 s e em04 a 600 s), confirmando que nenhuma mensagem foi descartada pela infraestrutura.
 
 ![Rule Engine Statistics](figures/thingsboard_rule_engine_statistics.png)
-
----
-
-## Dispositivos ativos
-
-Durante o período observado, **4 estações meteorológicas** permaneceram ativas simultaneamente, transmitindo dados de forma contínua.
-
-![Atividade — dispositivos 12h](figures/thingsboard_activity_devices_12h.png)
-![Atividade — mensagens 12h](figures/thingsboard_activity_messages_12h.png)
 
 ---
 
