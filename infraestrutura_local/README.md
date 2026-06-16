@@ -82,3 +82,80 @@ Indicadores que tal vez encuentre en el terminal da Rasp
 - **Uptime dos contêineres Docker** — `docker ps --format "table {{.Names}}\t{{.Status}}"`
 - **Comportamento após reinicialização** — os serviços são configurados com `restart: always` no Docker Compose, garantindo retomada automática; a ser confirmado com logs reais
 - https://avbentem.github.io/airtime-calculator/ttn/au915/2,12
+
+lsm@lsm:~ $ systemd-analyze blame
+11.160s docker.service ---- contenedor 
+ 5.995s NetworkManager-wait-online.service ---- servicio de internet 
+ 5.991s cloudflared.service ---- tunnel como servicio "persistente"
+
+ 
+ Docker + Cloudflare = 20s /// perdida de ene
+ 
+ 
+ 2.854s NetworkManager.service
+ 1.931s cloud-init-main.service
+ 1.918s cloud-config.service
+ 1.896s containerd.service servicio de cloudflaare para tunnel 
+ 1.803s ssh.service
+ 1.790s lightdm.service
+ 1.782s plymouth-quit-wait.service
+ 1.194s dev-sda2.device
+ 1.005s e2scrub_reap.service
+  998ms udisks2.service
+  952ms rpc-statd-notify.service
+  884ms apt-daily.service
+  857ms apt-daily-upgrade.service
+  608ms ModemManager.service
+  534ms rpi-eeprom-update.service
+  504ms accounts-daemon.service
+  467ms polkit.service
+  440ms systemd-udevd.service
+  388ms man-db.service
+  378ms systemd-fsck@dev-disk-by\x2dpartuuid-eab2b7da\x2d01.service
+lines 1-23...skipping...
+11.160s docker.service ----- servicio de docker /// cotenedor de chirp 
+ 5.995s NetworkManager-wait-online.service
+ 5.991s cloudflared.service
+ 2.854s NetworkManager.service
+ 1.931s cloud-init-main.service
+ 1.918s cloud-config.service
+ 1.896s containerd.service
+ 1.803s ssh.service
+ 1.790s lightdm.service
+ 1.782s plymouth-quit-wait.service
+ 1.194s dev-sda2.device
+ 1.005s e2scrub_reap.service
+  998ms udisks2.service
+  952ms rpc-statd-notify.service
+  884ms apt-daily.service
+  857ms apt-daily-upgrade.service
+  608ms ModemManager.service
+  534ms rpi-eeprom-update.service
+  504ms accounts-daemon.service
+  467ms polkit.service
+  440ms systemd-udevd.service
+  388ms man-db.service
+  378ms systemd-fsck@dev-disk-by\x2dpartuuid-eab2b7da\x2d01.service
+  343ms rpi-setup-loop@var-swap.service
+  302ms avahi-daemon.service
+  296ms bluetooth.service
+  286ms plymouth-start.service
+  283ms dbus.service
+  258ms rp1-test.service
+  227ms user@1000.service
+  220ms glamor-test.service
+  215ms wpa_supplicant.service
+  213ms logrotate.service
+  199ms cloud-final.service
+  195ms cloud-init-local.service
+  169ms keyboard-setup.service
+  164ms systemd-hostnamed.service
+  161ms sshswitch.service
+
+[1]+  Stopped                 systemd-analyze blame
+lsm@lsm:~ $ 
+
+ Caso solo caida de internet:
+lsm@lsm:~ $ start=$(date +%s%3N); sudo nmcli networking off; sleep 10; sudo nmcli networking on; while ! ping -c1 8.8.8.8 &>/dev/null; do sleep 1; done; end=$(date +%s%3N); echo "Recovery time: $((end-start)) ms"
+Recovery time: 15478 ms
+lsm@lsm:~ $ 
