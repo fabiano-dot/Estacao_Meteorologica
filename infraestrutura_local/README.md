@@ -81,3 +81,4 @@ Indicadores que tal vez encuentre en el terminal da Rasp
 - **Uptime do sistema** — `uptime -p`
 - **Uptime dos contêineres Docker** — `docker ps --format "table {{.Names}}\t{{.Status}}"`
 - **Comportamento após reinicialização** — os serviços são configurados com `restart: always` no Docker Compose, garantindo retomada automática; a ser confirmado com logs reais
+- https://avbentem.github.io/airtime-calculator/ttn/au915/2,12
